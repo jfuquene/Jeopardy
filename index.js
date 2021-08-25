@@ -4,14 +4,20 @@ async function getCategories(){
     return data
 }
 
+function getCategoryHtml(category) {
+    return `
+        <div class="my-category-title">${category.title}</div>
+        <div class="my-category-clue">$100</div>
+        <div class="my-category-clue">$200</div>
+        <div class="my-category-clue">$300</div>
+        <div class="my-category-clue">$400</div>
+    `
+}
+
 getCategories().then(categories => {
     console.log(categories)
-    categories.map(category => {
-     let div = document.createElement("div")
-       div.textContent = category.title
-       let board = document.getElementById("board")
-       board.append(div)
-
-    })
+    document.body.innerHTML = `<div class="board">
+        ${categories.map(getCategoryHtml).join('')}
+    </div>`
 })
 

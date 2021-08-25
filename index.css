@@ -23,4 +23,10 @@ body {
 .my-category-title{
     grid-row-start: 1;
     background-color: aqua;
+    text-transform: capitalize;
+
+}
+
+.my-category-clue {
+    font-size: 2rem;
 }

@@ -5,7 +5,8 @@ async function getCategories(count, offset){
 }
 
 function getClue(clueValue) {
-    return `div class="my-category-clue" style="grid-row-start: ${clueValue / 100 + 1}" >$${clueValue}</div>`
+    return `<div class="my-category-clue"  style="grid-row-start: ${clueValue / 100 + 1}">
+    $${clueValue}</div>`
 }
 
 function getCategoryHtml(category) {
@@ -20,8 +21,10 @@ function getCategoryHtml(category) {
 
 getCategories(5).then(categories => {
     console.log(categories)
-    document.body.innerHTML = `<div class="board">
+    document.body.innerHTML = `<div id="board" class="board">
         ${categories.map(getCategoryHtml).join('')}
     </div>`
 })
 
+// function sel(id){
+//     let divs=document.getElementById("")

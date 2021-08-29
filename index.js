@@ -5,7 +5,7 @@ async function getCategories(count, offset){
 }
 
 function getClue(clueValue) {
-    return `<div class="my-category-clue"  style="grid-row-start: ${clueValue / 100 + 1}">
+    return `<div class="my-category-clue" onClick=sel(this) style="grid-row-start: ${clueValue / 100 + 1}">
     $${clueValue}</div>`
 }
 
@@ -26,5 +26,4 @@ getCategories(5).then(categories => {
     </div>`
 })
 
-// function sel(id){
-//     let divs=document.getElementById("")
+
